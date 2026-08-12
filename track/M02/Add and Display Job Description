@@ -1,0 +1,35 @@
+class JobDescription:
+    def __init__(self, job_id, company, role):
+        self.job_id = job_id
+        self.company = company
+        self.role = role
+
+class PlacementManager:
+    def __init__(self):
+        self.jobs = []
+
+    def add_job_description(self, job):
+        self.jobs.append(job)
+
+    def display_job_descriptions(self):
+        if not self.jobs:
+            print("No job descriptions available")
+        else:
+            print("JOB DESCRIPTIONS")
+            for job in self.jobs:
+                print(f"{job.job_id} - {job.company} - {job.role}")
+
+# Code provided in editor:
+manager = PlacementManager()
+
+n = int(input())
+
+for _ in range(n):
+    job_id = int(input())
+    company = input().strip()
+    role = input().strip()
+    
+    job = JobDescription(job_id, company, role)
+    manager.add_job_description(job)
+
+manager.display_job_descriptions()
