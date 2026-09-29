@@ -6,3 +6,4 @@ descending_marks = sorted(marks, reverse=True)
 
 print(*ascending_marks)
 print(*descending_marks)
+
